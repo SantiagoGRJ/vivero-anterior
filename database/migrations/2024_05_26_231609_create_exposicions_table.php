@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('exposicions', function (Blueprint $table) {
             $table->id();
+            //sa
             $table->foreignId('id_planta')->references('id')->on('plantas');
             $table->unsignedSmallInteger('horas_directa')->default(0);
             $table->unsignedSmallInteger('horas_indirecta')->default(0);
