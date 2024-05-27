@@ -17,9 +17,12 @@ class EventoFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_plantas' => fake()->numberBetween(1,5),
+            //'id_plantas' => fake()->numberBetween(1,5),
             'id_user' => fake()->numberBetween(1,5),
-            'nombre' => fake()->randomElement(['riego','exposicion','fertilizacion']),
+            'id_riego' => fake()->numberBetween(1,5),
+            'id_exposicion' => fake()->numberBetween(1,5),
+            'id_fertilizacion' => fake()->numberBetween(1,5),
+            //'nombre' => fake()->randomElement(['riego','exposicion','fertilizacion']),
         ];
     }
 }

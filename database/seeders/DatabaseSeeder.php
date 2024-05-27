@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         Planta::factory(5)->create();
         Vivere::factory(5)->create();
-        Evento::factory(5)->create();
         Riego::factory(5)->create();
         Exposicion::factory(5)->create();
         Fertilizacion::factory(5)->create();
+        Evento::factory(5)->create();
 
 
     }
