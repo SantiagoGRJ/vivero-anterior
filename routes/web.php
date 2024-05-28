@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function (){
+    Route::resource('plantas',PlantaController::class);
+});
 require __DIR__.'/auth.php';

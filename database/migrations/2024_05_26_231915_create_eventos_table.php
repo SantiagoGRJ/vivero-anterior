@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
             //$table->foreignId('id_plantas')->references('id')->on('plantas');
-            $table->foreignId('id_user')->references('id')->on('users');
-            $table->foreignId('id_riego')->references('id')->on('riegos');
-            $table->foreignId('id_exposicion')->references('id')->on('exposicions');
-            $table->foreignId('id_fertilizacion')->references('id')->on('fertilizacions');
+            $table->foreignId('id_user')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_riego')->constrained('riegos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_exposicion')->constrained('exposicions')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_fertilizacion')->constrained('fertilizacions')->onUpdate('cascade')->onDelete('cascade');
             //$table->enum('nombre',['riego','exposicion','fertilizacion']);
             $table->timestamps();
         });

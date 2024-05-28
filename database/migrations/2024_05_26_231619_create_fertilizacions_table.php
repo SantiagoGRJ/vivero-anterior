@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('fertilizacions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_planta')->references('id')->on('plantas');
+            $table->foreignId('id_planta')->constrained('plantas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nombre');
             $table->enum('tipo', ['organico','quimico']);
             $table->enum('frecuencia', ['mensual','bimestral']);

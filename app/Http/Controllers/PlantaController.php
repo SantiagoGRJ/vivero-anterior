@@ -13,6 +13,8 @@ class PlantaController extends Controller
     public function index()
     {
         //
+        $plantas = Planta::all();
+        return view("plantas.index",compact('plantas'));
     }
 
     /**
@@ -45,6 +47,7 @@ class PlantaController extends Controller
     public function edit(Planta $planta)
     {
         //
+        return view("plantas.edit",compact("planta"));
     }
 
     /**
@@ -53,6 +56,7 @@ class PlantaController extends Controller
     public function update(Request $request, Planta $planta)
     {
         //
+    
     }
 
     /**
@@ -61,5 +65,7 @@ class PlantaController extends Controller
     public function destroy(Planta $planta)
     {
         //
+        $planta->delete();
+        return redirect()->route("plantas.index")->with("success","");
     }
 }

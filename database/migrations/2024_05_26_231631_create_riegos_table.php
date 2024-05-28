@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('riegos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_plantas')->references('id')->on('plantas');
+            $table->foreignId('id_plantas')->constrained('plantas')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('metodo',['goteo','aspersion']);
             $table->enum('frecuencia',['diaria','semanal']);
             $table->string('cantidad');
