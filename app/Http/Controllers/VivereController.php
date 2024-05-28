@@ -9,6 +9,8 @@ class VivereController extends Controller
     public function index()
     {
         //
+        $viveres=Vivere::all();
+        return view('viveres.index',compact('viveres'));
     }
 
     /**
@@ -17,6 +19,7 @@ class VivereController extends Controller
     public function create()
     {
         //
+        return view('viveres.create');
     }
 
     /**
@@ -25,6 +28,8 @@ class VivereController extends Controller
     public function store(Request $request)
     {
         //
+        Vivere::create($request->all());
+        return redirect()->route("viveres.index")->with("success","");
     }
 
     /**
@@ -33,6 +38,7 @@ class VivereController extends Controller
     public function show(Vivere $vivere)
     {
         //
+        return view('viveres.show',compact('vivere'));
     }
 
     /**
@@ -41,6 +47,7 @@ class VivereController extends Controller
     public function edit(Vivere $vivere)
     {
         //
+        return view('viveres.edit',compact('vivere'));
     }
 
     /**
@@ -49,6 +56,8 @@ class VivereController extends Controller
     public function update(Request $request, Vivere $vivere)
     {
         //
+        $vivere->update($request->all());
+        return redirect()->route('viveres.index');
     }
 
     /**
@@ -57,5 +66,7 @@ class VivereController extends Controller
     public function destroy(Vivere $vivere)
     {
         //
+        $vivere->delete();
+        return redirect()->route('viveres.index');
     }
 }

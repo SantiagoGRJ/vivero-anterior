@@ -20,7 +20,7 @@ class PlantaFactory extends Factory
             'nombre_cientifico'=>fake()->word(),
             'nombre_comun' => fake()->word(),
             'descripcion' => fake()->sentence(5),
-            'foto' => fake()->boolean(),
+            'foto' => fake()->word(),
             'tipo' => fake()->word(),
             'necesidad_riego' => fake()->boolean(),
             'necesidad_solar'=> fake()->boolean(),

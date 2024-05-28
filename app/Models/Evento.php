@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Evento extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+    ];
+
+    protected function casts() : array
+    {
+        return [
+
+        ];
+    }
 }

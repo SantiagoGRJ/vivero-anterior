@@ -23,6 +23,7 @@ class PlantaController extends Controller
     public function create()
     {
         //
+        return view("plantas.create");
     }
 
     /**
@@ -31,6 +32,9 @@ class PlantaController extends Controller
     public function store(Request $request)
     {
         //
+        Planta::create($request->all());
+
+        return redirect()->route("plantas.index")->with("success","");
     }
 
     /**
@@ -39,6 +43,7 @@ class PlantaController extends Controller
     public function show(Planta $planta)
     {
         //
+        return view("plantas.show",compact("planta"));
     }
 
     /**
@@ -56,7 +61,10 @@ class PlantaController extends Controller
     public function update(Request $request, Planta $planta)
     {
         //
-    
+
+        $planta->update($request->all());
+        return redirect()->route("plantas.index")->with("success","");
+
     }
 
     /**

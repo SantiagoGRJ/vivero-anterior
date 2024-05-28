@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlantaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VivereController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,5 +21,6 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function (){
     Route::resource('plantas',PlantaController::class);
+    Route::resource('viveres', VivereController::class);
 });
 require __DIR__.'/auth.php';
