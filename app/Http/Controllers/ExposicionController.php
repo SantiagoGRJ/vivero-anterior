@@ -9,6 +9,8 @@ class ExposicionController extends Controller
     public function index()
     {
         //
+        $exposicion = Exposicion::all();
+        return view("exposicion.index",compact("exposicion"));
     }
 
     /**
@@ -17,6 +19,7 @@ class ExposicionController extends Controller
     public function create()
     {
         //
+        return view("exposicion.create");
     }
 
     /**
@@ -25,6 +28,8 @@ class ExposicionController extends Controller
     public function store(Request $request)
     {
         //
+        Exposicion::create($request->all());
+        return redirect()->route('exposicion.index');
     }
 
     /**
@@ -33,6 +38,7 @@ class ExposicionController extends Controller
     public function show(Exposicion $exposicion)
     {
         //
+        return view('exposicion.show',compact('exposicion'));
     }
 
     /**
@@ -41,6 +47,7 @@ class ExposicionController extends Controller
     public function edit(Exposicion $exposicion)
     {
         //
+        return view('exposicion.edit',compact('exposicion'));
     }
 
     /**
@@ -49,6 +56,8 @@ class ExposicionController extends Controller
     public function update(Request $request, Exposicion $exposicion)
     {
         //
+        $exposicion->update($request->all());
+        return redirect()->route('exposicion.index');
     }
 
     /**
@@ -57,5 +66,7 @@ class ExposicionController extends Controller
     public function destroy(Exposicion $exposicion)
     {
         //
+        $exposicion->delete();
+        return redirect()->route('exposicion.index');
     }
 }

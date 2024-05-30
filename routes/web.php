@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ExposicionController;
+use App\Http\Controllers\FertilizacionController;
 use App\Http\Controllers\PlantaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RiegoController;
 use App\Http\Controllers\VivereController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,5 +26,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function (){
     Route::resource('plantas',PlantaController::class);
     Route::resource('viveres', VivereController::class);
+    Route::resource('riegos', RiegoController::class);
+    Route::resource('exposicion',ExposicionController::class);
+    Route::resource('fertilizacion', FertilizacionController::class);
 });
 require __DIR__.'/auth.php';

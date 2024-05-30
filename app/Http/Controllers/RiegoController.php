@@ -9,6 +9,8 @@ class RiegoController extends Controller
     public function index()
     {
         //
+        $Riego = Riego::all();
+        return view("riegos.index",compact("Riego"));
     }
 
     /**
@@ -17,6 +19,7 @@ class RiegoController extends Controller
     public function create()
     {
         //
+        return view("riegos.create");
     }
 
     /**
@@ -25,6 +28,8 @@ class RiegoController extends Controller
     public function store(Request $request)
     {
         //
+        Riego::create($request->all());
+        return redirect()->route('riegos.index');
     }
 
     /**
@@ -33,6 +38,7 @@ class RiegoController extends Controller
     public function show(Riego $riego)
     {
         //
+        return view('riegos.show',compact('riego'));
     }
 
     /**
@@ -41,6 +47,7 @@ class RiegoController extends Controller
     public function edit(Riego $riego)
     {
         //
+        return view('riegos.edit',compact('riego'));
     }
 
     /**
@@ -49,6 +56,8 @@ class RiegoController extends Controller
     public function update(Request $request, Riego $riego)
     {
         //
+        $riego->update($request->all());
+        return redirect()->route('riegos.index');
     }
 
     /**
@@ -57,5 +66,7 @@ class RiegoController extends Controller
     public function destroy(Riego $riego)
     {
         //
+        $riego->delete();
+        return redirect()->route('riegos.index');
     }
 }

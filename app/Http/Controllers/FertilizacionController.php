@@ -9,6 +9,8 @@ class FertilizacionController extends Controller
     public function index()
     {
         //
+        $fertilizacion=Fertilizacion::all();
+        return view("fertilizacion.index",compact("fertilizacion"));
     }
 
     /**
@@ -17,6 +19,7 @@ class FertilizacionController extends Controller
     public function create()
     {
         //
+        return view("fertilizacion.create");
     }
 
     /**
@@ -25,6 +28,8 @@ class FertilizacionController extends Controller
     public function store(Request $request)
     {
         //
+        Fertilizacion::create($request->all());
+        return redirect()->route('fertilizacion.index');
     }
 
     /**
@@ -33,6 +38,7 @@ class FertilizacionController extends Controller
     public function show(Fertilizacion $fertilizacion)
     {
         //
+        return view('fertilizacion.show',compact('fertilizacion'));
     }
 
     /**
@@ -41,6 +47,7 @@ class FertilizacionController extends Controller
     public function edit(Fertilizacion $fertilizacion)
     {
         //
+        return view('fertilizacion.edit',compact('fertilizacion'));
     }
 
     /**
@@ -49,6 +56,8 @@ class FertilizacionController extends Controller
     public function update(Request $request, Fertilizacion $fertilizacion)
     {
         //
+        $fertilizacion->update($request->all());
+        return redirect()->route('fertilizacion.index');
     }
 
     /**
@@ -57,5 +66,7 @@ class FertilizacionController extends Controller
     public function destroy(Fertilizacion $fertilizacion)
     {
         //
+        $fertilizacion->delete();
+        return redirect()->route('fertilizacion.index');
     }
 }

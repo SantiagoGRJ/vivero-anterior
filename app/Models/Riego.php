@@ -10,7 +10,10 @@ class Riego extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'id_plantas',
+        'metodo',
+        'frecuencia',
+        'cantidad',
     ];
 
     protected function casts() : array

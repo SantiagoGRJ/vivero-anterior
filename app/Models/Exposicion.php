@@ -10,7 +10,9 @@ class Exposicion extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'id_planta',
+        'horas_directa',
+        'horas_indirecta'
     ];
 
     protected function casts() : array
