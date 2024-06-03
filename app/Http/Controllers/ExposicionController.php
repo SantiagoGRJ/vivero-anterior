@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreExposicionRequest;
 use App\Models\Exposicion;
 use Illuminate\Http\Request;
 
@@ -25,10 +27,11 @@ class ExposicionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreExposicionRequest $request)
     {
         //
-        Exposicion::create($request->all());
+
+        Exposicion::create($request->validated());
         return redirect()->route('exposicion.index');
     }
 
@@ -53,10 +56,10 @@ class ExposicionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Exposicion $exposicion)
+    public function update(StoreExposicionRequest $request, Exposicion $exposicion)
     {
         //
-        $exposicion->update($request->all());
+        $exposicion->update($request->validated());
         return redirect()->route('exposicion.index');
     }
 
