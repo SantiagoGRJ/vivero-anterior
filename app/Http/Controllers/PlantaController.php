@@ -43,6 +43,7 @@ class PlantaController extends Controller
     public function show(Planta $planta)
     {
         //
+        $planta=Planta::with("riegos","fertilizaciones","exposiciones")->findOrFail($planta->id);
         return view("plantas.show",compact("planta"));
     }
 

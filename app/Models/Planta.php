@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Planta extends Model
 {
@@ -27,4 +29,23 @@ class Planta extends Model
         ];
 
     }
+
+    public function riegos() : HasMany
+    {
+        return $this->hasMany(Riego::class,"id_plantas");
+    }
+    public function exposiciones() : HasMany
+    {
+        return $this->hasMany(Exposicion::class,"id_planta");
+    }
+    public function fertilizaciones() : HasMany
+    {
+        return $this->hasMany(Fertilizacion::class,"id_planta");
+    }
+
+
+
+
+
+
 }
