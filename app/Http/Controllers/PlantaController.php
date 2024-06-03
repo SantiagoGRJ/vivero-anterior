@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePlantaRequest;
 use App\Models\Planta;
 use Illuminate\Http\Request;
 
@@ -29,10 +30,11 @@ class PlantaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePlantaRequest $request)
     {
         //
-        Planta::create($request->all());
+
+        Planta::create($request->validated());
 
         return redirect()->route("plantas.index")->with("success","");
     }
@@ -59,11 +61,11 @@ class PlantaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Planta $planta)
+    public function update(StorePlantaRequest $request, Planta $planta)
     {
         //
 
-        $planta->update($request->all());
+        $planta->update($request->validated());
         return redirect()->route("plantas.index")->with("success","");
 
     }
