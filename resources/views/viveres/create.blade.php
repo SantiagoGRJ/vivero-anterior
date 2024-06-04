@@ -11,23 +11,38 @@
         @csrf
         <div class="col-span-1">
             <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre </label>
-            <input id="nombre1" name="nombre" class="border border-gray-300 rounded-md p-2 w-full" type="text">
+            <input id="nombre" name="nombre" value="{{ old('nombre') }}" class="border border-gray-300 rounded-md p-2 w-full" type="text">
+            @error('nombre')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+            @enderror
         </div>
         <div class="col-span-1">
             <label for="cantidad" class="block text-sm font-medium text-gray-700 mb-2">Cantidad</label>
-            <input id="nombre2" name="cantidad" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            <input id="cantidad" name="cantidad" value="{{ old('cantidad') }}" min="1" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            @error('cantidad')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+            @enderror
         </div>
         <div class="col-span-1">
             <label for="udm" class="block text-sm font-medium text-gray-700 mb-2">Unidad de Medida</label>
-            <input id="nombre3" name="udm" class="border border-gray-300 rounded-md p-2 w-full" type="text">
+            <input id="udm" name="udm" value="{{ old('udm') }}" class="border border-gray-300 rounded-md p-2 w-full" type="text">
+            @error('udm')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+            @enderror
         </div>
         <div class="col-span-1">
             <label for="fecha_compra" class="block text-sm font-medium text-gray-700 mb-2">Fecha de Compra</label>
-            <input id="nombre4" name="fecha_compra" class="border border-gray-300 rounded-md p-2 w-full" type="date">
+            <input id="fecha_compra" name="fecha_compra" value="{{ old('fecha_compra') }}" class="border border-gray-300 rounded-md p-2 w-full" type="date">
+            @error('fecha_compra')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+            @enderror
         </div>
         <div class="col-span-2 m-auto">
             <label for="fecha_caducidad" class="block text-sm font-medium text-gray-700 mb-2">Fecha de Caducidad</label>
-            <input id="nombre5" name="fecha_caducidad" class="border border-gray-300 rounded-md p-2 w-full" type="date">
+            <input id="fecha_caducidad" name="fecha_caducidad" value="{{ old('fecha_caducidad') }}" class="border border-gray-300 rounded-md p-2 w-full" type="date">
+            @error('fecha_caducidad')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="col-span-2 m-auto">

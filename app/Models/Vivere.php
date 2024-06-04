@@ -10,11 +10,11 @@ class Vivere extends Model
     use HasFactory;
 
     protected $fillable = [
-        "nombre",
-        "cantidad",
-        "udm",
+        'nombre',
+        'cantidad',
+        'udm',
         'fecha_compra' ,
-        "fecha_caducidad" ,
+        'fecha_caducidad',
     ];
 
     protected function casts() : array

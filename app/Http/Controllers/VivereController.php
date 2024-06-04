@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreVivereRequest;
 use App\Models\Vivere;
 use Illuminate\Http\Request;
 
@@ -25,10 +27,10 @@ class VivereController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreVivereRequest $request)
     {
         //
-        Vivere::create($request->all());
+        Vivere::create($request->validated());
         return redirect()->route("viveres.index")->with("success","");
     }
 
@@ -53,10 +55,10 @@ class VivereController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vivere $vivere)
+    public function update(StoreVivereRequest $request, Vivere $vivere)
     {
         //
-        $vivere->update($request->all());
+        $vivere->update($request->validated());
         return redirect()->route('viveres.index');
     }
 
