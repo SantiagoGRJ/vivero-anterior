@@ -20,7 +20,7 @@ class RiegoFactory extends Factory
             'id_plantas' => fake()->numberBetween(1,5),
             'metodo' => fake()->randomElement(['goteo','aspersion']),
             'frecuencia' => fake()->randomElement(['diaria','semanal']),
-            'cantidad' => fake()->word(),
+            'cantidad' => fake()->numberBetween(1,10),
         ];
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreRiegoRequest;
 use App\Models\Riego;
 use Illuminate\Http\Request;
 
@@ -25,10 +27,11 @@ class RiegoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRiegoRequest $request)
     {
         //
-        Riego::create($request->all());
+
+        Riego::create($request->validated());
         return redirect()->route('riegos.index');
     }
 
@@ -53,10 +56,10 @@ class RiegoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Riego $riego)
+    public function update(StoreRiegoRequest $request, Riego $riego)
     {
         //
-        $riego->update($request->all());
+        $riego->update($request->validated());
         return redirect()->route('riegos.index');
     }
 
