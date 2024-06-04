@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreFertilizacionRequest;
 use App\Models\Fertilizacion;
 use Illuminate\Http\Request;
 
@@ -25,10 +27,11 @@ class FertilizacionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreFertilizacionRequest $request)
     {
         //
-        Fertilizacion::create($request->all());
+
+        Fertilizacion::create($request->validated());
         return redirect()->route('fertilizacion.index');
     }
 
@@ -53,10 +56,10 @@ class FertilizacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Fertilizacion $fertilizacion)
+    public function update(StoreFertilizacionRequest $request, Fertilizacion $fertilizacion)
     {
         //
-        $fertilizacion->update($request->all());
+        $fertilizacion->update($request->validated());
         return redirect()->route('fertilizacion.index');
     }
 

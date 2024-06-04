@@ -22,7 +22,7 @@ class FertilizacionFactory extends Factory
             'tipo' => fake()->randomElement(['organico','quimico']),
             'frecuencia' => fake()->randomElement(['mensual','bimestral']),
             'metodo' => fake()->randomElement(['diluido en agua','directamente en el suelo']),
-            'cantidad' => fake()->word(),
+            'cantidad' => fake()->numberBetween(1, 100),
             'fecha_ultima_aplicacion' => fake()->date('Y_m_d'),
             'proxima_aplicacion' => fake()->date('Y_m_d'),
         ];
