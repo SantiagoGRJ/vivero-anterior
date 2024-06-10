@@ -12,7 +12,7 @@
         @csrf
         <div class="col-span-1">
             <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Id Planta </label>
-            <input id="id_planta" name="id_planta" value="{{ old('id_planta') }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            <input id="id_planta" name="id_planta" value="{{ old('id_planta',$id) }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
             @error('id_planta')
             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
             @enderror

@@ -61,10 +61,10 @@
                             <td class="py-3 px-6">{{ $item->necesidad_fertilizacion }}</td>
 
                             <td class="py-3 px-6">
-                                <a  class=" bg-yellow-600 p-2 rounded-lg text-white hover:bg-yellow-400" href="{{ route('exposicion.create') }}">Exposición</a>
+                                <a  class=" bg-yellow-600 p-2 rounded-lg text-white hover:bg-yellow-400" href="{{ route('exposicion.create',$item->id) }}">Exposición</a>
                             </td>
                             <td class="py-3 px-6">
-                                <a class=" bg-blue-600 p-2 rounded-lg text-white hover:bg-blue-400" href="{{ route('exposicion.create') }}">Fertilización</a>
+                                <a class=" bg-blue-600 p-2 rounded-lg text-white hover:bg-blue-400" href="{{ route('fertilizacion.create') }}">Fertilización</a>
                             </td>
                             <td class="py-3 px-6">
                                 <a class=" bg-orange-600 p-2 rounded-lg text-white hover:bg-orange-400" href="{{ route('riegos.create') }}">Riego</a>

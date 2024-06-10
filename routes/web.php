@@ -44,7 +44,36 @@ Route::middleware('auth')->group(function (){
    Route::resource('plantas',PlantaController::class);
     Route::resource('viveres', VivereController::class);
     Route::resource('riegos', RiegoController::class);
-    Route::resource('exposicion',ExposicionController::class);
+
+   // Route::resource('exposicion',ExposicionController::class);
+
+
     Route::resource('fertilizacion', FertilizacionController::class);
 });
+
+Route::controller(ExposicionController::class)->group(function () {
+
+    Route::get('exposicion', 'index')->name('exposicion.index');
+
+    Route::get('exposicion/{id}/create', 'create')->name('exposicion.create');
+
+    Route::post('exposicion', 'store')->name('exposicion.store');
+
+    Route::get('exposicion/{id}/edit', 'edit')->name('exposicion.edit');
+
+    Route::patch('exposicion/{id}', 'update')->name('exposicion.update');
+
+    Route::get('exposicion/{id}', 'show')->name('exposicion.show');
+
+    Route::delete('exposicion/{id}', 'destroy')->name('exposicion.destroy');
+});
+
+
+
+
+
+
+
+
+
 require __DIR__.'/auth.php';
