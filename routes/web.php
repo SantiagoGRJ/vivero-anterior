@@ -68,6 +68,22 @@ Route::controller(ExposicionController::class)->group(function () {
     Route::delete('exposicion/{id}', 'destroy')->name('exposicion.destroy');
 });
 
+Route::controller(FertilizacionController::class)->group(function () {
+
+    Route::get('fertilizacion', 'index')->name('fertilizacion.index');
+
+    Route::get('fertilizacion/{id}/create', 'create')->name('fertilizacion.create');
+
+    Route::post('fertilizacion', 'store')->name('fertilizacion.store');
+
+    Route::get('fertilizacion/{id}/edit', 'edit')->name('fertilizacion.edit');
+
+    Route::patch('fertilizacion/{id}', 'update')->name('fertilizacion.update');
+
+    Route::get('fertilizacion/{id}', 'show')->name('fertilizacion.show');
+
+    Route::delete('fertilizacion/{id}', 'destroy')->name('fertilizacion.destroy');
+});
 
 
 
