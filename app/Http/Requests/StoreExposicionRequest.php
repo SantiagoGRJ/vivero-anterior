@@ -24,8 +24,8 @@ class StoreExposicionRequest extends FormRequest
         return [
             //
             'id_planta' => ['required','numeric'],
-            'horas_directa' => ['required','numeric'],
-            'horas_indirecta' => ['required','numeric'],
+            'horas_directa' => ['required','numeric','min:1'],
+            'horas_indirecta' => ['required','numeric','min:1'],
         ];
     }
 }

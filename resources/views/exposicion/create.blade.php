@@ -19,14 +19,14 @@
         </div>
         <div class="col-span-1">
             <label for="cantidad" class="block text-sm font-medium text-gray-700 mb-2">Horas Directas</label>
-            <input id="horas_directa" name="horas_directa" value="{{ old('horas_directa') }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            <input id="horas_directa" name="horas_directa" min="1" value="{{ old('horas_directa') }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
             @error('horas_directa')
             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
             @enderror
         </div>
         <div class="col-span-2 m-auto">
             <label for="udm" class="block text-sm font-medium text-gray-700 mb-2">Horas Indirecta</label>
-            <input id="horas_indirecta" name="horas_indirecta" value="{{ old('horas_directa') }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            <input id="horas_indirecta" name="horas_indirecta" min="1" value="{{ old('horas_directa') }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
             @error('horas_indirecta')
             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
             @enderror

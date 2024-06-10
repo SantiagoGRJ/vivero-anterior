@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Exposicion extends Model
 {
@@ -20,5 +21,10 @@ class Exposicion extends Model
         return [
 
         ];
+    }
+
+    public function plantas() : BelongsTo
+    {
+        return $this->belongsTo(Planta::class);
     }
 }
