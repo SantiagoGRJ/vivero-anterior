@@ -18,10 +18,10 @@ class RiegoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
         //
-        return view("riegos.create");
+        return view("riegos.create",compact("id"));
     }
 
     /**

@@ -11,7 +11,7 @@
 
 <section class="flex items-center justify-center gap-5 flex-col p-6 bg-gray-100">
     <section>
-        <a href="{{ route('fertilizacion.create') }}" class="bg-green-400 p-2 rounded-md text-lg">Agregar</a>
+       {{--  <a href="{{ route('fertilizacion.create') }}" class="bg-green-400 p-2 rounded-md text-lg">Agregar</a> --}}
     </section>
     <div class="w-full overflow-x-auto">
         <table class="min-w-full bg-white border border-gray-200">

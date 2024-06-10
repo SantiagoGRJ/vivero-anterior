@@ -18,10 +18,10 @@ class ExposicionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
         //
-        return view("exposicion.create");
+        return view("exposicion.create",compact("id"));
     }
 
     /**
