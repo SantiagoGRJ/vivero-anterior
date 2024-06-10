@@ -43,12 +43,12 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function (){
    Route::resource('plantas',PlantaController::class);
     Route::resource('viveres', VivereController::class);
-    Route::resource('riegos', RiegoController::class);
+    //Route::resource('riegos', RiegoController::class);
 
    // Route::resource('exposicion',ExposicionController::class);
 
 
-    Route::resource('fertilizacion', FertilizacionController::class);
+   // Route::resource('fertilizacion', FertilizacionController::class);
 });
 
 Route::controller(ExposicionController::class)->group(function () {
@@ -83,6 +83,23 @@ Route::controller(FertilizacionController::class)->group(function () {
     Route::get('fertilizacion/{id}', 'show')->name('fertilizacion.show');
 
     Route::delete('fertilizacion/{id}', 'destroy')->name('fertilizacion.destroy');
+});
+
+Route::controller(RiegoController::class)->group(function () {
+
+    Route::get('riegos', 'index')->name('riegos.index');
+
+    Route::get('riegos/{id}/create', 'create')->name('riegos.create');
+
+    Route::post('riegos', 'store')->name('riegos.store');
+
+    Route::get('riegos/{id}/edit', 'edit')->name('riegos.edit');
+
+    Route::patch('riegos/{id}', 'update')->name('riegos.update');
+
+    Route::get('riegos/{id}', 'show')->name('riegos.show');
+
+    Route::delete('riegos/{id}', 'destroy')->name('riegos.destroy');
 });
 
 

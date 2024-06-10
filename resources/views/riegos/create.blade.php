@@ -11,7 +11,7 @@
         @csrf
         <div class="col-span-1">
             <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Id Planta </label>
-            <input id="nombre1" name="id_plantas" min="0" value="{{ old('id_plantas',5) }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
+            <input id="nombre1" name="id_plantas" min="0" value="{{ old('id_plantas',$id) }}" class="border border-gray-300 rounded-md p-2 w-full" type="number">
             @error('id_plantas')
             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
         @enderror

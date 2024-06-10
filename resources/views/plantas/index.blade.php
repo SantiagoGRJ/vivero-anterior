@@ -67,7 +67,7 @@
                                 <a class=" bg-blue-600 p-2 rounded-lg text-white hover:bg-blue-400" href="{{ route('fertilizacion.create',$item->id) }}">Fertilización</a>
                             </td>
                             <td class="py-3 px-6">
-                                <a class=" bg-orange-600 p-2 rounded-lg text-white hover:bg-orange-400" href="{{ route('riegos.create') }}">Riego</a>
+                                <a class=" bg-orange-600 p-2 rounded-lg text-white hover:bg-orange-400" href="{{ route('riegos.create',$item->id) }}">Riego</a>
                             </td>
 
                             <!-- Comparacion de Roles -->
