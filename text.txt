@@ -7,5 +7,7 @@ y se muestre la rama
 
 crear rama
 
-establer rama santiago
+establer rama santiago y master
+
+
 
