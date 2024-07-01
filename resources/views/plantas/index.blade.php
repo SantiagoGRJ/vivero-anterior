@@ -54,7 +54,7 @@
                             <td class="py-3 px-6">{{ $item->descripcion }}</td>
                             <td class="py-3 px-6">{{ $item->foto }}</td>
                             <td class="py-3 px-6">{{ $item->tipo }}</td>
-
+                            
 
                             <td class="py-3 px-6">{{ $item->necesidad_riego }}</td>
                             <td class="py-3 px-6">{{ $item->necesidad_solar }}</td>
